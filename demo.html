@@ -60,6 +60,7 @@
             if (JSPM.JSPrintManager.websocket_status == JSPM.WSStatus.Open)
                 return true;
             else if (JSPM.JSPrintManager.websocket_status == JSPM.WSStatus.Closed) {
+                alert('error');
                 console.warn('JSPrintManager (JSPM) is not installed or not running! Download JSPM Client App from https://neodynamic.com/downloads/jspm');
                 return false;
             }
