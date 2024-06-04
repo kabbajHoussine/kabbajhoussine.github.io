@@ -18,13 +18,30 @@
                 const total = '18023.00';
                 var text = "<CENTER><BIG>Mon Quotidien<BR><NORMAL><SMALL><LEFT>tel: 05 24 34 65 61<BR>Num Ref SALE/POS/5678654<BR>Date: 10/12/2023 16:45<BR><BR><BR><BR>Mille F. Vanille<BR>"+printLine('   '+quantity+' x '+price+': '+total,32,' ')+"<BR><LINE><LEFT>TOTAL<RIGHT>180.00<BR><BR><CUT>";
                 var textEncoded = encodeURI(text);
+
+                try {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == XMLHttpRequest.DONE) {
+                        console.log(xhr.responseText);
+                    }
+                }
+                xhr.open('GET', "quickprinter://" + textEncoded, true);
+                xhr.send(null);
+                } catch (error) {
+                  console.error('Error setting window location:', error);
+                  // Redirect to home page
+                  //window.location.href = "/";
+                }
+                
+                /*
                 try {
                   window.location.href = "quickprinter://" + textEncoded;
                 } catch (error) {
                   console.error('Error setting window location:', error);
                   // Redirect to home page
                   window.location.href = "/";
-                }
+                }*/
             }
         </script>
         <a onclick="sendToQuickPrinter();">Print Button</a>
