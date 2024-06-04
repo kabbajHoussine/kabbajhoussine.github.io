@@ -18,6 +18,7 @@
                 const total = '18023.00';
                 var text = "<CENTER><BIG>Mon Quotidien<BR><NORMAL><SMALL><LEFT>tel: 05 24 34 65 61<BR>Num Ref SALE/POS/5678654<BR>Date: 10/12/2023 16:45<BR><BR><BR><BR>Mille F. Vanille<BR>"+printLine('   '+quantity+' x '+price+': '+total,32,' ')+"<BR><LINE><LEFT>TOTAL<RIGHT>180.00<BR><BR><CUT>";
                 var textEncoded = encodeURI(text);
+                console.log(textEncoded);
                 window.location.href="quickprinter://"+textEncoded;
             }
         </script>
