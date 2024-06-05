@@ -1,7 +1,11 @@
 <html>
     <body>
         <script>
-                
+            window.onload = function() {
+              if (window.exist) {
+                alert(window.exist);
+              }
+            };
             function printLine(str, size, sep = ":", space = null) {
               size = space ? space : size;
               let length = str.length;
@@ -37,7 +41,7 @@
             }
         </script>
         <div style="display:flex;">
-        <button style="padding:200px 200px 200px 200px;" onclick="sendToQuickPrinter();">Print demo</button>
+        <button style="padding:200px 200px 200px 200px;" onclick="sendToQuickPrinter();">Print demo app</button>
             </div>
     </body>
 </html>
