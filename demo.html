@@ -1,12 +1,11 @@
 <html>
     <body>
         <script>
-            /*window.onload = (event) => {
                 if (window.ReactNativeWebView.injectedObjectJson()) {
                             //if(JSON.parse(window.ReactNativeWebView.injectedObjectJson()).isMobilePrinter){
                             alert('okok');
                 }
-            }*/
+
             function printLine(str, size, sep = ":", space = null) {
               size = space ? space : size;
               let length = str.length;
@@ -23,8 +22,8 @@
                 const price = '151.00';
                 const total = '18023.00';
                 var text = "<CENTER><BIG>Mon Quotidien<BR><NORMAL><SMALL><LEFT>tel: 05 24 34 65 61<BR>Num Ref SALE/POS/5678654<BR>Date: 10/12/2023 16:45<BR><BR><BR><BR>Mille F. Vanille<BR>"+printLine('   '+quantity+' x '+price+': '+total,32,' ')+"<BR><LINE><LEFT>TOTAL<RIGHT>180.00<BR><BR><CUT>";
-                var textEncoded = encodeURI(text);
-                window.ReactNativeWebView.postMessage(textEncoded);
+                //var textEncoded = encodeURI(text);
+                window.ReactNativeWebView.postMessage(text);
                 
                 /*
                 try {
@@ -37,7 +36,7 @@
             }
         </script>
         <div style="display:flex;">
-        <button style="padding:200px 200px 200px 200px;" onclick="sendToQuickPrinter();">Print Button</button>
+        <button style="padding:200px 200px 200px 200px;" onclick="sendToQuickPrinter();">Print Button demo</button>
             </div>
     </body>
 </html>
